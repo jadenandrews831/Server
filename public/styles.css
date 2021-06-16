@@ -1,0 +1,25 @@
+body
+{
+    background-color: antiquewhite;
+    justify-items: center;
+    align-items: center;
+    font-family: fascinate, monospace;
+}
+
+#nav
+{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    align-items: center;
+    flex-direction: horizontal;
+    background-color: black;
+    width: 25vw;
+    height: 50px;
+}
+
+#head
+{
+    color: white;
+}

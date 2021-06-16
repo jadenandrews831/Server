@@ -1,31 +1,11 @@
-const http = require('http')
-const fs = require('fs')
-const port = 3000
+const express = require('express')
+const app = express()
 
-const server = http.createServer(function (req, res) 
-{
-    res.writeHead(200, { 'Content-Type': 'text/html' })
-    fs.readFile('Server/index.html', function(error, data) 
-    {
-        console.log(error)
-        if(error)
-        {
-            res.writeHead(404)
-            res.write('Error: File Not Found')
-        } else
-        {
-            res.write(data)
-        }
-        res.end()
-    })
-})
+app.set('view engine', 'ejs')
+app.use(express.static('Public'))
 
-server.listen(port, function(error)
+app.listen(3000, function (err)
 {
-    if(error)
-    {
-        console.log('Something went wrong...', error)
-    } else{
-        console.log('Server is listening on port ' + port)
-    }
+    if(err) console.log('HMM, SOMETHING WENT WRONG...')
+    else console.log('listening on localhost:3000')
 })
